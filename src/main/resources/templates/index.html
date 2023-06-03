@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" type="text/css" th:href ="@{'/css/bootstrap.css'}">
+    <script type="text/javascript" th:src="@{'js/bootstrap.bundle.js'}"></script>
+
+</head>
+
+<body>
+<div class="container mb-5">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Student List</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/add-student">Add Student</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">SURNAME</th>
+            <th scope="col">EXAM</th>
+            <th scope="col">MARK</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bala: ${balalar}" th:style="${bala.getMark()=='F' ? 'color:red;':''}">
+            <th th:text="${bala.getId()}"></th>
+            <td th:text="${bala.getName()}"></td>
+            <td th:text="${bala.getSurname()}"></td>
+            <td th:text="${bala.getExam()}"></td>
+            <td th:text="${bala.getMark()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

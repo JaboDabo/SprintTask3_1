@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link  rel="stylesheet" type="text/css" th:href ="@{'/css/bootstrap.css'}">
+    <script type="text/javascript" th:src="@{'js/bootstrap.bundle.js'}"></script>
+</head>
+<body>
+
+<div class="container mb-5">
+    <div class="row">
+
+        <!--     NAVBAR   -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Student List</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/add-student">Add Student</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="col mx-auto">
+
+
+            <form action="/add-student" method="post">
+                <div class="mb-3">
+                    <label class="form-label">NAME</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">SURNAME</label>
+                    <input type="text" class="form-control" name="surname">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">EXAM</label>
+                    <input type="number" class="form-control" name="exam">
+                </div>
+
+                <button type="submit" class="btn btn-primary">ADD STUDENT</button>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
